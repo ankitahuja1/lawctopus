@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<form class="p-3">
+  <div class="form-group" id="type1g">
+    <label for="type1">Type of Opportunity</label>
+    <select class="form-control" id="type1" required>
+      <option value="x" selected>Select</option>
+      <option value="College">College/University</option>
+      <option value="Internship">Internship</option>
+      <option value="Job">Job</option>
+      <option value="Others">Others</option>
+    </select>
+</div>
+
+<div class="form-group" id="college1g">
+    <label for="college1">Select the Type of Post</label>
+    <select class="form-control" id="otherField">
+      <option selected disabled>Select</option>
+        <option>Free</option>
+        <option>Rs. 1000- Branded (with Logo)</option>
+        <option>Rs. 2000- Boosted (Branded + Facebook, Twitter, Linkedin)</option>
+        <option>Rs. 3000- SEOed (Branded + Boosted + SEO)</option>
+        <option>Rs. 4000- Notified (SEOed + Push Notification)</option>
+        <option>Rs. 5000- Whatsapped (Notified + Whatsapp updates)</option>
+    </select>
+  </div>
+  
+
+<div class="form-group" id="internship1g">
+  <label for="internship1">Registration Fee</label>
+  <input type="price" class="form-control" id="internship1" placeholder="Enter Amount" required>
+</div>
+
+<div class="form-group" id="internship2g">
+  <label for="internship2">Number of Expected Participants</label>
+  <input type="price" class="form-control" id="Enter Number of Positions" placeholder="Enter Number" required>
+</div>
+
+<div class="form-group" id="internship3g">
+  <label for="internship3">Select Type of Office</label>
+  <select class="form-control" id="office">
+    <option selected disabled>Select</option>
+      <option>Small office: 1-10 lawyers, NGOs</option>
+      <option>Medium-sized office: 10+ employees, Colleges (across offices)</option>
+      <option>Large offices: 50+ lawyers (across offices)</option>
+  </select>
+</div>
+
+<div class="form-group" id="job1g">
+  <label for="job1">Select Type of Office</label>
+  <select class="form-control" id="job1">
+    <option selected disabled>Select</option>
+      <option>Small office: 1-10 lawyers, NGOs</option>
+      <option>Medium-sized office: 10+ employees, Colleges (across offices)</option>
+      <option>Large offices: 50+ lawyers (across offices)</option>
+  </select>
+</div>
+
+<div class="form-group" id="other1g">
+  <label for="other1">Registration Fee</label>
+  <input type="price" class="form-control" id="other1" placeholder="Enter Number" required>
+</div>
+<div class="form-group" id="other2g">
+<label for="other2">Expected Attendees/Registrants</label>
+<input type="price" class="form-control" id="other2" placeholder="Enter Number" required>
+</div>
+
+<div class="form-group" >
+  <label for="exampleFormControlFile1">Select the document</label>
+  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+</div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+<script>
+  $("#type1").change(function() {
+  if ($(this).val() == "x"){
+    $('#college1g').hide();
+    $('#internship1g').hide();
+    $('#internship2g').hide();
+    $('#internship3g').hide();
+    $('#job1g').hide();    
+    $('#other1g').hide();
+    $('#other2g').hide();
+
+  }else if ($(this).val() == "College") {
+    $('#college1g').show();
+
+    $('#internship1g').hide();
+    $('#internship2g').hide();
+    $('#internship3g').hide();
+    $('#job1g').hide();    
+    $('#other1g').hide();
+    $('#other2g').hide();
+
+  } else if ($(this).val() == "Internship"){
+    $('#internship1g').show();
+    $('#internship2g').show();
+    $('#internship3g').show();
+    
+    $('#college1g').hide(); 
+    $('#job1g').hide();    
+    $('#other1g').hide();
+    $('#other2g').hide();
+
+
+  } else if ($(this).val() == "Job") {
+    $('#job1g').show();
+
+    $('#internship1g').hide();
+    $('#internship2g').hide();
+    $('#internship3g').hide();
+    $('#college1g').hide();     
+    $('#other1g').hide();
+    $('#other2g').hide();
+
+  } else if ($(this).val() == "Others"){
+    $('#other1g').show();
+    $('#other2g').show();
+    
+    $('#internship1g').hide();
+    $('#internship2g').hide();
+    $('#internship3g').hide();
+    $('#job1g').hide();
+    $('#college1g').hide();     
+  }
+});
+$("#type1").trigger("change");
+</script>
