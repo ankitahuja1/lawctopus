@@ -68,3 +68,8 @@
     </mj-section>
   </mj-body>
 </mjml>
+<style>
+  .screen-reader-text{
+  display:none
+  }
+  </style>
