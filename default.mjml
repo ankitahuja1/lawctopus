@@ -11,7 +11,10 @@
     <mj-style inline="inline">
       a {
         color: {{accentColor}};
-        text-decoration: none;
+        text-decoration: underline;
+      }
+      .screen-reader-text {
+        display:none;
       }
     </mj-style>
   </mj-head>
